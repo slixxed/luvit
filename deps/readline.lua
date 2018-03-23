@@ -471,7 +471,7 @@ function Editor:readLine(prompt, callback)
 
   function finish(...)
     self.stdin:read_stop()
-    self.stdin:set_mode(0)
+    --self.stdin:set_mode(0)
     self.stdout:write('\n')
     return callback(...)
   end
@@ -482,7 +482,7 @@ function Editor:readLine(prompt, callback)
   self.history:add(tostring(self.line))
   self.historyIndex = #self.history
 
-  self.stdin:set_mode(1)
+  --self.stdin:set_mode(1)
   self.stdin:read_start(onKey)
 
 end
